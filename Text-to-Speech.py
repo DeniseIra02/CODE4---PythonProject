@@ -7,7 +7,7 @@ import os
 
 root = Tk()
 root.title("Text convert to Speech")
-root.geometry("900x500")
+root.geometry("900x500+200+200")
 root.resizable(False, False)
 root.configure(bg="#430b66")
 
@@ -18,8 +18,7 @@ root.iconphoto(False, icon)
 #top of the frame
 top_frame = Frame(root, bg="white", width=900, height=80)
 top_frame.place(x=0, y=0)
-
-
+Label(top_frame, text="TEXT CONVERT TO SPEECH", font="arial 20 bold", bg="white", fg="#ab7fc7").place(x=50, y=30)
 
 
 
