@@ -1,7 +1,7 @@
 from tkinter import *
 
 root = Tk()
-root.title("Addition Calculator")
+root.title("Calculator")
 
 e = Entry(root, width=35, borderwidth=5)
 e.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
@@ -14,10 +14,16 @@ def buttonclick(number):
 def button_clear():
     e.delete(0, END)
     
-def button_add(first_number):
+def button_add():
     first_number = e.get()
     global fnum
     fnum = int(first_number)
+    e.delete(0, END)
+    
+def button_equal():
+    second_number = e.get()
+    e.delete(0, END)
+    e.insert(0, fnum + int(second_number))
 
 button1 = Button(root, text="1", padx=40, pady=20, command=lambda: buttonclick(1))
 button2 = Button(root, text="2", padx=40, pady=20, command=lambda: buttonclick(2))
@@ -30,7 +36,7 @@ button8 = Button(root, text="8", padx=40, pady=20, command=lambda: buttonclick(8
 button9 = Button(root, text="9", padx=40, pady=20, command=lambda: buttonclick(9))
 button0 = Button(root, text="0", padx=40, pady=20, command=lambda: buttonclick(0))
 buttonadd = Button(root, text="+", padx=40, pady=20, command=button_add)
-buttonequal = Button(root, text="=", padx=40, pady=20, command=lambda: buttonclick())
+buttonequal = Button(root, text="=", padx=40, pady=20, command=button_equal)
 buttonclear = Button(root, text="Clear", padx=40, pady=20, command= button_clear)
 
 button1.grid(row=3, column=0)
@@ -46,9 +52,8 @@ button8.grid(row=1, column=1)
 button9.grid(row=1, column=2)
 
 button0.grid(row=4, column=0)
-buttonclear.grid(row=4, column=1)
-
+buttonclear.grid(row=4, column=1, columnspan=2)
 buttonadd.grid(row=5, column=0)
-buttonequal.grid(row=5, column=1)
+buttonequal.grid(row=5, column=1, columnspan=2)
 
 root.mainloop()
