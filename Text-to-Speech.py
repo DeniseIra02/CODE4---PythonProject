@@ -29,4 +29,7 @@ text_input_area.place(x=10, y=150, width=500, height=300)
 gender_combobox = Combobox(root, values=['Male', 'Female'], font="arial 14", state='r', width=10)
 gender_combobox.place(x=550, y=200)
 
+speed_combobox = Combobox(root, values=['Normal', 'Fast', 'Slow'], font="arial 14", state='r', width=10)
+speed_combobox.place(x=730, y=200)
+
 root.mainloop()
