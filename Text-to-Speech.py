@@ -13,19 +13,19 @@ root.configure(bg="#430b66")
 
 engine = pyttsx3.init()
 
-def speak():
+def speaknow():
     text = text_input_area.get(1.0, END)
     gender = gender_combobox.get()
     speed = speed_combobox .get()
-    voices = engine.getProperty('Voices')
+    voices = engine.getProperty('voices')
     
     def setvoice():
-        if (gender == 'Male'):
+        if (gender == 'Female'):
             engine.setProperty('voice', voices[0].id)
             engine.say(text)
             engine.runAndWait
         else:
-            engine.setProperty('voice', voices[1 ].id)
+            engine.setProperty('voice', voices[1].id)
             engine.say(text)
             engine.runAndWait 
     
@@ -39,6 +39,38 @@ def speak():
         else:
             engine.setProperty('rate', 60)
             setvoice()
+
+def download():
+    text = text_input_area.get(1.0, END)
+    gender = gender_combobox.get()
+    speed = speed_combobox .get()
+    voices = engine.getProperty('voices')
+        
+    def setvoice():
+        if (gender == 'Male'):
+            engine.setProperty('voice', voices[0].id)
+            path = filedialog.askdirectory()
+            os.chdir(path)
+            engine.save_to_file(text,'text.mp3')
+            engine.runAndWait
+        else:
+            engine.setProperty('voice', voices[1 ].id)
+            path = filedialog.askdirectory()
+            os.chdir(path)
+            engine.save_to_file(text,'text.mp3')
+            engine.runAndWait 
+        
+    if (text):
+        if (speed == 'Fast'):
+            engine.setProperty('rate', 250)
+            setvoice()
+        elif (speed == 'Normal'):
+            engine.setProperty('rate', 150)
+            setvoice()
+        else:
+            engine.setProperty('rate', 60)
+            setvoice()
+
 
 #icon of app
 icon = PhotoImage(file="speak.png")
@@ -67,11 +99,11 @@ speed_combobox.place(x=730, y=200)
 speed_combobox.set('Normal')
 
 speakicon = PhotoImage(file="speak.png")
-button = Button(root, text="Speak",compound=LEFT, image=speakicon, width=130, bg="#b574a4", font="arial 14 bold")
+button = Button(root, text="Speak",compound=LEFT, image=speakicon, width=130, bg="#b574a4", font="arial 14 bold", command=speaknow)
 button.place(x=550, y=280)
 
 saveicon = PhotoImage(file="download.png")
-button = Button(root, text="Download",compound=LEFT, image=saveicon, width=150, bg="#74b59d", font="arial 14 bold")
+button = Button(root, text="Download",compound=LEFT, image=saveicon, width=150, bg="#74b59d", font="arial 14 bold", command=download)
 button.place(x=730, y=280)
 
 root.mainloop()
