@@ -38,6 +38,9 @@ button0 = Button(root, text="0", padx=40, pady=20, command=lambda: buttonclick(0
 buttonadd = Button(root, text="+", padx=40, pady=20, command=button_add)
 buttonequal = Button(root, text="=", padx=40, pady=20, command=button_equal)
 buttonclear = Button(root, text="Clear", padx=40, pady=20, command= button_clear)
+buttonsubtract = Button(root, text="-", padx=40, pady=20, command=button_subtract)
+buttonmultiply = Button(root, text="*", padx=40, pady=20, command=button_multiply)
+buttondivide = Button(root, text="/", padx=40, pady=20, command=button_divide)
 
 button1.grid(row=3, column=0)
 button2.grid(row=3, column=1)
@@ -55,5 +58,9 @@ button0.grid(row=4, column=0)
 buttonclear.grid(row=4, column=1, columnspan=2)
 buttonadd.grid(row=5, column=0)
 buttonequal.grid(row=5, column=1, columnspan=2)
+
+buttonsubtract.grid (row=6, column=0)
+buttonmultiply.grid (row=6, column=1)
+buttondivide.grid (row=6, column=2)
 
 root.mainloop()
