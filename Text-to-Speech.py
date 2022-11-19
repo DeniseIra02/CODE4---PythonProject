@@ -24,6 +24,11 @@ def speak():
             engine.setProperty('voice', voices[0].id)
             engine.say(text)
             engine.runAndWait
+        else:
+            engine.setProperty('voice', voices[1 ].id)
+            engine.say(text)
+            engine.runAndWait 
+
 
 #icon of app
 icon = PhotoImage(file="speak.png")
