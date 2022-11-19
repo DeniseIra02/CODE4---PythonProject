@@ -7,7 +7,11 @@ import os
 
 root = Tk()
 root.title("Text convert to Speech")
-root.geometry("1000x500")
+root.geometry("900x500")
 root.resizable(False, False)
+
+#icon of app
+icon = PhotoImage(file="speak.png")
+root.iconphoto(False, icon)
 
 root.mainloop()
