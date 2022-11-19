@@ -42,7 +42,7 @@ button = Button(root, text="Speak",compound=LEFT, image=speakicon, width=130, bg
 button.place(x=550, y=280)
 
 saveicon = PhotoImage(file="download.png")
-button = Button(root, text="Speak",compound=LEFT, image=saveicon, width=130, bg="#74b59d", font="arial 14 bold")
+button = Button(root, text="Download",compound=LEFT, image=saveicon, width=150, bg="#74b59d", font="arial 14 bold")
 button.place(x=730, y=280)
 
 root.mainloop()
