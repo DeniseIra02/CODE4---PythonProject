@@ -2,6 +2,9 @@ import tkinter as tk
 import requests
 import time 
 
+def get_theWeather():
+    city = textfield.get()
+
 canvas = tk.Tk()
 canvas.geometry ("600x500")
 canvas.title("Weather Forecast App")
