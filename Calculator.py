@@ -34,7 +34,7 @@ def button_multiply():
     first_number = e.get()
     global fnum
     global math
-    math ="mutiplication"
+    math ="multiplication"
     fnum = int(first_number)
     e.delete(0, END)
     
@@ -49,7 +49,18 @@ def button_divide():
 def button_equal():
     second_number = e.get()
     e.delete(0, END)
-    e.insert(0, fnum + int(second_number))
+    
+    if math == "addition":
+        e.insert(0, fnum + int(second_number))
+    
+    if math == "subtraction":
+        e.insert(0, fnum - int(second_number))
+    
+    if math == "multiplication":
+        e.insert(0, fnum * int(second_number))
+    
+    if math == "division":
+        e.insert(0, fnum / int(second_number))
 
 button1 = Button(root, text="1", padx=40, pady=20, command=lambda: buttonclick(1))
 button2 = Button(root, text="2", padx=40, pady=20, command=lambda: buttonclick(2))
