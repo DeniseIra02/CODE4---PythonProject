@@ -11,6 +11,8 @@ root.geometry("900x500+200+200")
 root.resizable(False, False)
 root.configure(bg="#430b66")
 
+engine = pyttsx3.init()
+
 #icon of app
 icon = PhotoImage(file="speak.png")
 root.iconphoto(False, icon)
