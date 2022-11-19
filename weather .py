@@ -8,3 +8,8 @@ canvas.title("Weather Forecast App")
 
 f = ("poppins", 15, "bold")
 t = ("poppins", 35, "bold")
+
+textfield = tk.Entry(canvas, font= t)
+textfield.pack(pady=20)
+textfield.focus()
+
