@@ -13,6 +13,13 @@ root.configure(bg="#430b66")
 
 engine = pyttsx3.init()
 
+def speak():
+    text = text_input_area.get(1.0, END)
+    gender = gender_combobox.get()
+    speed = speed_combobox .get()
+    voices = engine.getProperty('Voices')
+    
+
 #icon of app
 icon = PhotoImage(file="speak.png")
 root.iconphoto(False, icon)
