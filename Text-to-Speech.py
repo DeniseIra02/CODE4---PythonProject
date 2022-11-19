@@ -19,6 +19,11 @@ def speak():
     speed = speed_combobox .get()
     voices = engine.getProperty('Voices')
     
+    def setvoice():
+        if (gender == 'Male'):
+            engine.setProperty('voice', voices[0].id)
+            engine.say(text)
+            engine.runAndWait
 
 #icon of app
 icon = PhotoImage(file="speak.png")
