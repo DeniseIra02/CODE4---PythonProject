@@ -37,4 +37,8 @@ speed_combobox = Combobox(root, values=['Normal', 'Fast', 'Slow'], font="arial 1
 speed_combobox.place(x=730, y=200)
 speed_combobox.set('Normal')
 
+speakicon = PhotoImage(file="speak.png")
+button = Button(root, text="Speak", width=10, font="arial 14 bold")
+button.place(x=550, y=280)
+
 root.mainloop()
