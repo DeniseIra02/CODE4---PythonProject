@@ -38,7 +38,11 @@ speed_combobox.place(x=730, y=200)
 speed_combobox.set('Normal')
 
 speakicon = PhotoImage(file="speak.png")
-button = Button(root, text="Speak", width=10, font="arial 14 bold")
+button = Button(root, text="Speak",compound=LEFT, image=speakicon, width=130, bg="#b574a4", font="arial 14 bold")
 button.place(x=550, y=280)
+
+saveicon = PhotoImage(file="download.png")
+button = Button(root, text="Speak",compound=LEFT, image=saveicon, width=130, bg="#74b59d", font="arial 14 bold")
+button.place(x=730, y=280)
 
 root.mainloop()
