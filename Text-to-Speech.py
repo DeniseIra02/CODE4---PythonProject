@@ -28,7 +28,17 @@ def speak():
             engine.setProperty('voice', voices[1 ].id)
             engine.say(text)
             engine.runAndWait 
-
+    
+    if (text):
+        if (speed == 'Fast'):
+            engine.setProperty('rate', 250)
+            setvoice()
+        elif (speed == 'Normal'):
+            engine.setProperty('rate', 150)
+            setvoice()
+        else:
+            engine.setProperty('rate', 60)
+            setvoice()
 
 #icon of app
 icon = PhotoImage(file="speak.png")
