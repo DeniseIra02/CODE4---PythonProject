@@ -1,4 +1,3 @@
-import tkinter as tk
 from tkinter import *
 from tkinter import filedialog
 from tkinter.ttk import Combobox
@@ -20,12 +19,12 @@ def speaknow():
     voices = engine.getProperty('voices')
     
     def setvoice():
-        if (gender == 'Female'):
-            engine.setProperty('voice', voices[0].id)
+        if (gender == 'Male'):
+            engine.setProperty('voices', voices[0].id)
             engine.say(text)
             engine.runAndWait
         else:
-            engine.setProperty('voice', voices[1].id)
+            engine.setProperty('voices', voices[1].id)
             engine.say(text)
             engine.runAndWait 
     
@@ -48,13 +47,13 @@ def download():
         
     def setvoice():
         if (gender == 'Male'):
-            engine.setProperty('voice', voices[0].id)
+            engine.setProperty('voices', voices[0].id)
             path = filedialog.askdirectory()
             os.chdir(path)
             engine.save_to_file(text,'text.mp3')
             engine.runAndWait
         else:
-            engine.setProperty('voice', voices[1 ].id)
+            engine.setProperty('voices', voices[1 ].id)
             path = filedialog.askdirectory()
             os.chdir(path)
             engine.save_to_file(text,'text.mp3')
