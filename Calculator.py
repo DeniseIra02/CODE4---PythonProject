@@ -17,6 +17,32 @@ def button_clear():
 def button_add():
     first_number = e.get()
     global fnum
+    global math
+    math ="addition"
+    fnum = int(first_number)
+    e.delete(0, END)
+    
+def button_subtract():
+    first_number = e.get()
+    global fnum
+    global math
+    math ="subtraction"
+    fnum = int(first_number)
+    e.delete(0, END)
+    
+def button_multiply():
+    first_number = e.get()
+    global fnum
+    global math
+    math ="mutiplication"
+    fnum = int(first_number)
+    e.delete(0, END)
+    
+def button_divide():
+    first_number = e.get()
+    global fnum
+    global math
+    math ="division"
     fnum = int(first_number)
     e.delete(0, END)
     
@@ -35,12 +61,12 @@ button7 = Button(root, text="7", padx=40, pady=20, command=lambda: buttonclick(7
 button8 = Button(root, text="8", padx=40, pady=20, command=lambda: buttonclick(8))
 button9 = Button(root, text="9", padx=40, pady=20, command=lambda: buttonclick(9))
 button0 = Button(root, text="0", padx=40, pady=20, command=lambda: buttonclick(0))
-buttonadd = Button(root, text="+", padx=40, pady=20, command=button_add)
-buttonequal = Button(root, text="=", padx=40, pady=20, command=button_equal)
-buttonclear = Button(root, text="Clear", padx=40, pady=20, command= button_clear)
-buttonsubtract = Button(root, text="-", padx=40, pady=20, command=button_subtract)
-buttonmultiply = Button(root, text="*", padx=40, pady=20, command=button_multiply)
-buttondivide = Button(root, text="/", padx=40, pady=20, command=button_divide)
+buttonadd = Button(root, text="+", padx=39, pady=20, command=button_add)
+buttonequal = Button(root, text="=", padx=91, pady=20, command=button_equal)
+buttonclear = Button(root, text="Clear", padx=79, pady=20, command= button_clear)
+buttonsubtract = Button(root, text="-", padx=41, pady=20, command=button_subtract)
+buttonmultiply = Button(root, text="*", padx=39, pady=20, command=button_multiply)
+buttondivide = Button(root, text="/", padx=39, pady=20, command=button_divide)
 
 button1.grid(row=3, column=0)
 button2.grid(row=3, column=1)
