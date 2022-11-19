@@ -15,4 +15,12 @@ root.configure(bg="#430b66")
 icon = PhotoImage(file="speak.png")
 root.iconphoto(False, icon)
 
+#top of the frame
+top_frame = Frame(root, bg="white", width=900, height=80)
+top_frame.place(x=0, y=0)
+
+
+
+
+
 root.mainloop()
