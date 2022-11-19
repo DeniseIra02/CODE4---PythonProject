@@ -7,7 +7,9 @@ try:
         print("Listening...")
         voice = __listener__.listen(source)
         command = __listener__.recognize_google(voice)
-        print(command)
+        command = command.lower()
+        if 'jazz' in command:
+            print(command)
         
 except:
     pass
